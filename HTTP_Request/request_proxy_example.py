@@ -1,4 +1,3 @@
-from aiohttp import request
 import requests
 from requests.auth import HTTPProxyAuth
 

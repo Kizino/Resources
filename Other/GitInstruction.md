@@ -4,6 +4,8 @@ git init
 git remote add origin git@github.com:userid/Resources.git
 # Add files to commit
 git add .
+# Check status
+git status
 # Commit with comment
 git commit -m 'Initial Commit'
 # Push to the remote repository
