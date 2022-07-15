@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-def log_message(message):
+def logging(message):
     # Create a Log folder in current  directory if not exist
     path = os.getcwd() + "/Log/"
     if not os.path.exists(path):
@@ -15,8 +15,8 @@ def log_message(message):
         f.write(log)
 
 def main():
-    log_message("Starting Program")
-    log_message("Exiting Program")
+    logging("Starting Program")
+    logging("Exiting Program")
 
 if __name__ == "__main__":
     main()

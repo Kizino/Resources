@@ -1,2 +1,2 @@
-[07/08/2022 18:10:28] - Starting Program
-[07/08/2022 18:10:28] - Exiting Program
+[07/08/2022 19:56:40] - Starting Program
+[07/08/2022 19:56:40] - Exiting Program
