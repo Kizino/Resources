@@ -6,9 +6,6 @@ load_dotenv()
 USERID = os.getenv("USERID")
 PASSSWORD = os.getenv("PASSWORD")
 
-def main():
+if __name__ == "__main__":
     print(f'UserId: {USERID}')
     print(f'Password: {PASSSWORD}')
-
-if __name__ == "__main__":
-    main()

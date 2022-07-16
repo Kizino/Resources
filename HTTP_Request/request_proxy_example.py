@@ -32,10 +32,7 @@ def api_request():
 
     return r
 
-def main():
+if __name__ == "__main__":
     response = api_request()
     print(response.status_code)
     print(response.text)
-
-if __name__ == "__main__":
-    main()

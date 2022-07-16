@@ -14,9 +14,6 @@ def logging(message):
     with open(os.getcwd() + "/Log/log.txt", "a") as f:
         f.write(log)
 
-def main():
+if __name__ == "__main__":
     logging("Starting Program")
     logging("Exiting Program")
-
-if __name__ == "__main__":
-    main()
