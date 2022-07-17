@@ -1,12 +1,20 @@
+# pip3 install asyncio
+# pip3 install aiohttp
 import aiohttp
 import asyncio
 import time
+import logging
 
 async def fetch(session, url, sem, sleep_time):
-    async with sem:
-        async with session.get(url) as resp:
-            await asyncio.sleep(sleep_time)
-            return await resp.json()
+    while True:
+        try:    
+            async with sem:
+                async with session.get(url) as resp:
+                    assert resp.status == 200
+                    await asyncio.sleep(sleep_time)
+                    return await resp.json()
+        except:
+            logging.error(f'Cant fetch data from: {url}')
         
 async def asyncStarter(url_list : list[str], rate_limit, time_limit):
     sem = asyncio.Semaphore(rate_limit)

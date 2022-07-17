@@ -1,10 +1,17 @@
+# pip3 install asyncio
+# pip3 install aiohttp
 import aiohttp
 import asyncio
 import time
+import logging
 
 async def fetch(session, url):
-    async with session.get(url) as resp:
-        return await resp.json()
+    try:
+        async with session.get(url) as resp:
+            assert resp.status == 200
+            return await resp.json()
+    except:
+        logging.error(f'Cant fetch data from: {url}')
          
 async def asyncStarter(url_list : list[str]):
     async with aiohttp.ClientSession() as session:
@@ -17,7 +24,7 @@ async def asyncStarter(url_list : list[str]):
 if __name__ == '__main__':
     start_time = time.time()
     
-    pkm_url_list = [f'https://pokeapi.co/api/v2/pokemon/{number}'for number in range(1, 151)]
+    pkm_url_list = [f'https://pokeapi.co/api/v2/pokemona/{number}'for number in range(1, 151)]
     response = asyncio.run(asyncStarter(pkm_url_list))
 
     for pkm in response:
