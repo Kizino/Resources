@@ -14,9 +14,9 @@ if(flowFile != None):
 	ff_callback = PyInputStreamCallback()
 	session.read(flowFile, ff_callback)
 	
-  # Count how many times the word "Hello" appear in flowfile content
+  	# Count how many times the word "Hello" appear in flowfile content
 	word_count = str(ff_callback.content).count("Hello")
 
-  # Put number of appearance in flowfile attribute
+  	# Put number of appearance in flowfile attribute
 	flowFile = session.putAttribute(flowFile, "attr_name", str(word_count))
 	session.transfer(flowFile, REL_SUCCESS)
